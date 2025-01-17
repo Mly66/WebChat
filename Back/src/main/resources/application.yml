@@ -10,18 +10,18 @@ spring:
     password: root
   mvc:
     pathmatch:
-      matching-strategy: ANT_PATH_MATCHER # Springboot2.6以后将SpringMVC 默认路径匹配策略从AntPathMatcher 更改为PathPatternParser
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
-#    virtual-host: /
-#pinda:
-#  swagger:
-#    enabled: true
-#    title: mly文档
-#    base-package: com.mly.controller
+      matching-strategy: ANT_PATH_MATCHER 
+ rabbitmq:
+   host: localhost
+   port: 5672
+   username: guest
+   password: guest
+   virtual-host: /
+pinda:
+ swagger:
+   enabled: true
+   title: mly文档
+   base-package: com.mly.controller
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

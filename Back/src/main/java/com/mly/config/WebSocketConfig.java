@@ -24,6 +24,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     /**
      * 构造器注入 RabbitMQ 配置
+     * 
      * @param rabbitMQProperties 配置类，自动注入
      */
     @Autowired
@@ -39,6 +40,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     /**
      * 注册 STOMP 端点
+     * 
      * @param registry 注册 STOMP 端点
      */
     @Override
@@ -50,6 +52,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     /**
      * 配置消息代理
+     * 
      * @param registry 配置消息代理
      */
     @Override
@@ -58,20 +61,19 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.enableSimpleBroker(Constants.SIMPLE_BROKER);
         registry.setApplicationDestinationPrefixes(Constants.DESTINATION_PREFIXES);
 
-        // 如果需要连接到 RabbitMQ 进行消息传递，取消注释下面的代码并配置 RabbitMQ
-//        if (rabbitMQProperties != null && rabbitMQProperties.getHost() != null) {
-//            registry.enableStompBrokerRelay(Constants.SIMPLE_BROKER)
-//                    .setVirtualHost(rabbitMQProperties.getVirtualHost())
-//                    .setRelayHost(rabbitMQProperties.getHost())
-//                    .setRelayPort(5672)  // 修改为 AMQP 通信端口：5672
-//                    .setClientLogin(rabbitMQProperties.getUsername())
-//                    .setClientPasscode(rabbitMQProperties.getPassword())
-//                    .setSystemLogin(rabbitMQProperties.getUsername())
-//                    .setSystemPasscode(rabbitMQProperties.getPassword())
-//                    .setSystemHeartbeatSendInterval(5000)
-//                    .setSystemHeartbeatReceiveInterval(5000);
-//        } else {
-//            log.warn("RabbitMQ configuration is missing, using simple broker.");
-//        }
-    }
+       if (rabbitMQProperties != null && rabbitMQPropert
+            registry.enableStompBrokerRelay(Constants.SIMPLE_BROKER)
+                .setVirtualHost(rabbitMQProperties.getVirtualHost()
+           tRelayHost(rabbitMQProperties.getHost())
+           tRelayPort(5672)  // 修改为 AMQP 通信端口：5672
+           tClientLogin(rabbit Properties.getUsernam
+           tClientPasscode(rabbitMQProperties.getPassword())
+           tSystemLogin(rabbitMQProperties.getUsername())
+           tSystemPasscode(rabbitMQProperties.getPassword())
+           tSystemHeartbeatSendInterval(5000)
+           tSystemHeartbeatReceiveInterval(5000)
+           
+            log.war
+           
+           
 }
