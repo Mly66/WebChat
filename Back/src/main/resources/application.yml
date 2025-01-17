@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: mly-chat-websocket
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mly_chat_websocket?serverTimeZone=UTC
+    username: root
+    password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER # Springboot2.6以后将SpringMVC 默认路径匹配策略从AntPathMatcher 更改为PathPatternParser
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#pinda:
+#  swagger:
+#    enabled: true
+#    title: mly文档
+#    base-package: com.mly.controller
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
